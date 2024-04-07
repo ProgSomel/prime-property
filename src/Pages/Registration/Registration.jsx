@@ -9,10 +9,10 @@ const Registration = () => {
     const handleRegistration = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        const name = form.get('name');
+        // const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
-        const photoURL = form.get('photoURL');
+        // const photoURL = form.get('photoURL');
 
         if(!/[A-Z]/.test(password)) {
             toast.error("Password Must have at least one Uppercase letter");
