@@ -3,12 +3,11 @@ import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaArrowRightToBracket } from "react-icons/fa6";
-import swal from 'sweetalert';
-import toast, { Toaster } from 'react-hot-toast';
-
+import swal from "sweetalert";
+import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const navLinks = (
     <>
@@ -35,13 +34,13 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-    .then(()=> {
-        swal( "Successfully logged Out!", "success");
-    })
-    .catch(error=> {
-        toast.error(error.message)
-    })
-  }
+      .then(() => {
+        swal("Successfully logged Out!", "success");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <div className="max-w-6xl mx-auto mt-5">
       <div className="navbar bg-base-100">
@@ -68,33 +67,39 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
-              {
-        user ?  <div className="navbar-end ">
-          {/*! Profile  */}
-          <div>
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar"
-              >
-                <div className="w-10 rounded-full">
-                  <img
-                    alt="Tailwind CSS Navbar component"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+              {user ? (
+                <div className="navbar-end ">
+                  {/*! Profile  */}
+                  <div>
+                    <div className="dropdown dropdown-end">
+                      <div className="tooltip" data-tip={user}>
+                        <img
+                          className="w-10 rounded-full"
+                          alt="Tailwind CSS Navbar component"
+                          src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    onClick={handleLogOut}
+                    className="btn btn-outline btn-error flex"
+                  >
+                    <FaArrowRightToBracket />
+                    Log Out
+                  </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-          <Link onClick={handleLogOut} className="btn btn-outline btn-error flex"><FaArrowRightToBracket />Log Out</Link>
-          
-        </div> : <div className="navbar-end flex items-center"><Link to="/login" className="btn  btn-outline btn-error"><FaArrowRightToBracket />Sign in</Link></div>
-       }
+              ) : (
+                <div className="navbar-end flex items-center">
+                  <Link to="/login" className="btn  btn-outline btn-error">
+                    <FaArrowRightToBracket />
+                    Sign in
+                  </Link>
+                </div>
+              )}
             </ul>
-            
           </div>
-          <a className="btn btn-ghost text-xl">
+          <Link to="/" className="flex items-center text-xl">
             <p className="text-yellow-600">
               <MdOutlineMapsHomeWork />
             </p>
@@ -102,38 +107,41 @@ const Navbar = () => {
               <span className="font-bold text-orange-500">Prime</span>
               <span className="italic text-red-500">Property</span>
             </p>
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}
-          
-          </ul>
-          
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        {
-        user ?  <div className="navbar-end hidden lg:flex">
-          {/*! Profile  */}
-          <div>
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar"
-              >
-                <div className="w-10 rounded-full">
+        {user ? (
+          <div className="navbar-end hidden lg:flex">
+            {/*! Profile  */}
+            <div>
+              <div className="dropdown dropdown-end">
+                <div className="tooltip" data-tip={user}>
                   <img
+                    className="w-10 rounded-full"
                     alt="Tailwind CSS Navbar component"
                     src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                   />
                 </div>
               </div>
             </div>
+            <Link
+              onClick={handleLogOut}
+              className="btn  ml-4 btn-outline btn-error"
+            >
+              <FaArrowRightToBracket />
+              Log Out
+            </Link>
           </div>
-          <Link onClick={handleLogOut} className="btn btn-outline btn-error"><FaArrowRightToBracket />Log Out</Link>
-          
-        </div> : <div className="navbar-end hidden md:flex"><Link to="/login" className="btn btn-outline btn-error"><FaArrowRightToBracket />Sign in</Link></div>
-       }
-       
+        ) : (
+          <div className="navbar-end hidden md:flex">
+            <Link to="/login" className="btn btn-outline btn-error">
+              <FaArrowRightToBracket />
+              Sign in
+            </Link>
+          </div>
+        )}
       </div>
       <Toaster />
     </div>
