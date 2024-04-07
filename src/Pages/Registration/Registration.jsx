@@ -1,35 +1,73 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../providers/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
+import swal from 'sweetalert';
 const Registration = () => {
+    const {createUser} = useContext(AuthContext);
+
+    const handleRegistration = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password');
+        const photoURL = form.get('photoURL');
+
+        if(!/[A-Z]/.test(password)) {
+            toast.error("Password Must have at least one Uppercase letter");
+            return;
+        }
+        else if(!/[a-z]/.test(password)) {
+            toast.error("Password Must have at least one lowercase letter");
+            return;
+        }
+        else if(password.length < 6) {
+            toast.error("Password must be at least 6 characters long");
+            return;
+        }
+
+        //! User creation 
+        createUser(email, password)
+        .then(()=> {
+            swal({
+                title: "Good job!",
+                text: "You are successfully logged in!",
+                icon: "success",
+                button: "Okay!",
+              });
+        })
+        .catch((err)=> console.log(err.message))
+    }
   return (
     <div className="px-2 md:px-4 lg:px-8 mt-12">
       <div className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-white mb-4">Register</h2>
-        <form>
+        <form onSubmit={handleRegistration}>
           <div className="mb-4">
             <input
-              type="text"
+              type="text" name="name"
               className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
               placeholder="Name"
             />
           </div>
           <div className="mb-4">
             <input
-              type="email"
+              type="email" name="email"
               className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
               placeholder="Email"
             />
           </div>
           <div className="mb-4">
             <input
-              type="text"
+              type="text" name="photoURL"
               className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
               placeholder="Photo URL"
             />
           </div>
           <div className="mb-4">
             <input
-              type="password"
+              type="password" name="password"
               className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
               placeholder="Password"
             />
@@ -45,6 +83,7 @@ const Registration = () => {
           </Link>
         </p>
       </div>
+      <Toaster />
     </div>
   );
 };
