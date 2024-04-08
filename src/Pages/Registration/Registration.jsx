@@ -58,7 +58,7 @@ const Registration = () => {
         })
     }
   return (
-    <div className="px-2 md:px-4 lg:px-8 mt-12">
+    <div className="px-2 md:px-4 lg:px-8 my-12">
       <div className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-white mb-4">Register</h2>
         <form onSubmit={handleRegistration}>
