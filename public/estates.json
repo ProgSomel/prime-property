@@ -1,0 +1,81 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Villa with Ocean View",
+      "segment_name": "Single-family homes",
+      "description": "Beautiful villa overlooking the ocean, perfect for a peaceful retreat.",
+      "price": "$1,500,000",
+      "status": "sale",
+      "area": "3500 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["5 bedrooms", "Infinity pool", "Home theater"],
+      "image": "villa1.jpg",
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "estate_title": "Modern Loft in Downtown",
+      "segment_name": "Apartments",
+      "description": "Stylish loft apartment located in the heart of the city.",
+      "price": "$800,000",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "New York City, New York",
+      "facilities": ["Open floor plan", "Balcony with city views", "Fitness center"],
+      "image": "loft1.jpg",
+      "rating": 4.5
+    },
+    {
+      "id": 3,
+      "estate_title": "Family Home with Garden",
+      "segment_name": "Single-family homes",
+      "description": "Spacious family home with a large backyard garden.",
+      "price": "$600,000",
+      "status": "rent",
+      "area": "2800 sq ft",
+      "location": "Seattle, Washington",
+      "facilities": ["4 bedrooms", "Backyard garden", "Garage"],
+      "image": "home1.jpg",
+      "rating": 4.3
+    },
+    {
+      "id": 4,
+      "estate_title": "Cozy Cottage in the Countryside",
+      "segment_name": "Vacation rentals",
+      "description": "Charming cottage nestled in a peaceful countryside setting.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Cotswolds, England",
+      "facilities": ["2 bedrooms", "Fireplace", "Garden"],
+      "image": "cottage1.jpg",
+      "rating": 4.7
+    },
+    {
+      "id": 5,
+      "estate_title": "City Townhouse with Rooftop Patio",
+      "segment_name": "Townhouses",
+      "description": "Modern townhouse with rooftop patio, ideal for urban living.",
+      "price": "$900,000",
+      "status": "rent",
+      "area": "2200 sq ft",
+      "location": "San Francisco, California",
+      "facilities": ["3 bedrooms", "Rooftop patio", "Garage"],
+      "image": "townhouse1.jpg",
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "estate_title": "Student Housing near University",
+      "segment_name": "Student housing",
+      "description": "Convenient student housing within walking distance to campus.",
+      "price": "$1,200/month",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "Boston, Massachusetts",
+      "facilities": ["Furnished", "Laundry facilities", "Bike storage"],
+      "image": "studenthousing1.jpg",
+      "rating": 4.2
+    }
+  ]
+  

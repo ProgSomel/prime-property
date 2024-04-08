@@ -9,7 +9,7 @@ import "swiper/css";
 
 const Banner = () => {
   return (
-    <div className="my-12">
+    <div className="mt-8 mb-20">
       <AwesomeSlider>
         <div><img src={banner1} alt="" /></div>
         <div><img src={banner2} alt="" /></div>
