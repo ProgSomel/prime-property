@@ -75,7 +75,7 @@ const Navbar = () => {
                       <div className="tooltip" data-tip={user?.displayName}>
                         <img
                           className="w-10 rounded-full"
-                          alt="image"
+                          alt="profile"
                           src={user?.photoURL}
                         />
                       </div>
@@ -120,7 +120,7 @@ const Navbar = () => {
                 <div className="tooltip" data-tip={user?.displayName}>
                   <img
                     className="w-10 rounded-full"
-                    alt="Tailwind CSS Navbar component"
+                    alt="profile"
                     src={user?.photoURL}
                   />
                 </div>
