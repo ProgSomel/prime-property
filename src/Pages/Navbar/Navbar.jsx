@@ -14,11 +14,11 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/"
-          style={({ isActive, isPending, isTransitioning }) => {
+          style={({ isActive, isTransitioning }) => {
             return {
               fontWeight: isActive ? "bold" : "",
               backgroundColor: isActive ? "orange" : "",
-              color: isPending ? "red" : "black",
+              color: isActive ? "white" : "black",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
@@ -72,11 +72,11 @@ const Navbar = () => {
                   {/*! Profile  */}
                   <div>
                     <div className="dropdown dropdown-end">
-                      <div className="tooltip" data-tip={user}>
+                      <div className="tooltip" data-tip={user?.displayName}>
                         <img
                           className="w-10 rounded-full"
-                          alt="Tailwind CSS Navbar component"
-                          src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                          alt="image"
+                          src={user?.photoURL}
                         />
                       </div>
                     </div>
@@ -117,11 +117,11 @@ const Navbar = () => {
             {/*! Profile  */}
             <div>
               <div className="dropdown dropdown-end">
-                <div className="tooltip" data-tip={user}>
+                <div className="tooltip" data-tip={user?.displayName}>
                   <img
                     className="w-10 rounded-full"
                     alt="Tailwind CSS Navbar component"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user?.photoURL}
                   />
                 </div>
               </div>

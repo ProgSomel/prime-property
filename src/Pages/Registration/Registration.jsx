@@ -4,15 +4,15 @@ import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import swal from 'sweetalert';
 const Registration = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updatingProfile} = useContext(AuthContext);
 
     const handleRegistration = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        // const name = form.get('name');
+        const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
-        // const photoURL = form.get('photoURL');
+        const photoURL = form.get('photoURL');
 
         if(!/[A-Z]/.test(password)) {
             toast.error("Password Must have at least one Uppercase letter");
@@ -29,15 +29,33 @@ const Registration = () => {
 
         //! User creation 
         createUser(email, password)
-        .then(()=> {
+        .then((result)=> {
+          updatingProfile(name, photoURL)
+          .then(()=> {})
+          .catch((err) => {
+            swal({
+              title: "Error!",
+              text: `${err.message}`,
+              icon: "error",
+              button: "Okay!",
+            });
+          })
             swal({
                 title: "Good job!",
                 text: "You are successfully logged in!",
                 icon: "success",
                 button: "Okay!",
               });
+              console.log(result.user);
         })
-        .catch((err)=> console.log(err.message))
+        .catch((err)=> {
+          swal({
+            title: "Error!",
+            text: `${err.message}`,
+            icon: "error",
+            button: "Okay!",
+          });
+        })
     }
   return (
     <div className="px-2 md:px-4 lg:px-8 mt-12">
