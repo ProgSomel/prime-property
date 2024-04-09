@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import EstateDetails from "../Pages/EstateDetails/EstateDetails";
 import ProtectedRoute from "./ProtectedRoute";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const routes = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: () => fetch("../../public/estates.json"),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <ProtectedRoute>
+            <UpdateProfile></UpdateProfile>
+          </ProtectedRoute>
+        ),
       },
     ],
   },

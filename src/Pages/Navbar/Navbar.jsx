@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import swal from "sweetalert";
 import toast, { Toaster } from "react-hot-toast";
-import 'animate.css';
+import "animate.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -28,7 +28,19 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/updateProfile">Update Profile</NavLink>
+        <NavLink
+          to="/updateProfile"
+          style={({ isActive, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              backgroundColor: isActive ? "orange" : "",
+              color: isActive ? "white" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Update Profile
+        </NavLink>
       </li>
     </div>
   );

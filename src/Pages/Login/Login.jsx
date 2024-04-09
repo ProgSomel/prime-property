@@ -38,6 +38,7 @@ const Login = () => {
           text: "You are successfully logged in!",
           icon: "success",
         });
+        navigate(location?.state ? location.state : '/')
       })
       .catch(error => {
         toast.error(error.message)
@@ -53,6 +54,7 @@ const Login = () => {
           text: "You are successfully logged in!",
           icon: "success",
         });
+        navigate(location?.state ? location.state : '/')
       })
       .catch(error => {
         toast.error(error.message);
