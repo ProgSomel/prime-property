@@ -15,11 +15,11 @@ const EstatesCard = ({ estates }) => {
 
   return (
     <div>
-      <div className="hero  border-2 rounded-lg">
+      <div className="hero  border rounded-lg">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={image}
-            className="h-[300px] w-full lg:w-1/2 rounded-lg shadow-2xl"
+            className="h-[200px] w-full lg:w-1/2 rounded-lg shadow-2xl"
           />
           <div>
             <div className="flex gap-8 items-center">

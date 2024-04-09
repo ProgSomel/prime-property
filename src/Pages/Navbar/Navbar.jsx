@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const navLinks = (
-    <div className="animate__animated animate__swing  flex items-center">
+    <div className="animate__animated animate__swing  flex flex-col md:flex-row items-center">
       <li>
         <NavLink
           to="/"
@@ -114,7 +114,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         {user ? (
-          <div className="navbar-end hidden lg:flex">
+          <div className="navbar-end hidden md:flex">
             {/*! Profile  */}
             <div>
               <div className="dropdown dropdown-end">
