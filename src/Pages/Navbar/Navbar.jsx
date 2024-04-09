@@ -42,7 +42,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="max-w-6xl mx-auto mt-5">
+    <div className="max-w-6xl mx-auto mt-5 shadow-lg ">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
