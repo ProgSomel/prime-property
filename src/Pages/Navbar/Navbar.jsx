@@ -5,12 +5,13 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import swal from "sweetalert";
 import toast, { Toaster } from "react-hot-toast";
+import 'animate.css';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const navLinks = (
-    <>
+    <div className="animate__animated animate__swing  flex items-center">
       <li>
         <NavLink
           to="/"
@@ -29,7 +30,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/updateProfile">Update Profile</NavLink>
       </li>
-    </>
+    </div>
   );
 
   const handleLogOut = () => {

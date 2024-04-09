@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 const EstatesCard = ({ estates }) => {
   const {
@@ -27,7 +28,7 @@ const EstatesCard = ({ estates }) => {
               </p>
               <p className="text-green-500 font-bold">{price}</p>
             </div>
-            <p className="py-4 font-bold text-xl">{estate_title}</p>
+            <p className="py-4 font-bold text-xl animate__animated animate__bounce ">{estate_title}</p>
             <div className="flex gap-4 items-center">
               {facilities.map((facility, idx) => (
                 <p className="text-orange-900 font-semibold" key={idx}>
