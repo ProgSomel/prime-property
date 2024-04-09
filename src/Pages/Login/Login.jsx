@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import swal from 'sweetalert';
 import toast, { Toaster } from 'react-hot-toast';
 /* eslint-disable react/no-unescaped-entities */
 const Login = () => {
     const {signIn, googleLogin, githubLogin} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();  
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -21,6 +23,7 @@ const Login = () => {
                 text: "You are successfully logged in!",
                 icon: "success",
               });
+              navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             toast.error(error.message)
@@ -53,7 +56,7 @@ const Login = () => {
       })
       .catch(error => {
         toast.error(error.message);
-        
+
       })
 
     }
