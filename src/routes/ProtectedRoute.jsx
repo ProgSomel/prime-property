@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import { PropTypes } from 'prop-types';
+import { PropTypes } from "prop-types";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -14,10 +14,14 @@ const ProtectedRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center">
-        <span className="loading loading-spinner loading-xs"></span>
-        <span className="loading loading-spinner loading-sm"></span>
-        <span className="loading loading-spinner loading-md"></span>
-        <span className="loading loading-spinner loading-lg"></span>
+        <span className="loading loading-spinner text-primary"></span>
+        <span className="loading loading-spinner text-secondary"></span>
+        <span className="loading loading-spinner text-accent"></span>
+        <span className="loading loading-spinner text-neutral"></span>
+        <span className="loading loading-spinner text-info"></span>
+        <span className="loading loading-spinner text-success"></span>
+        <span className="loading loading-spinner text-warning"></span>
+        <span className="loading loading-spinner text-error"></span>
       </div>
     );
   }
@@ -26,7 +30,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 ProtectedRoute.propTypes = {
-    children: PropTypes.object
+  children: PropTypes.object,
 };
 
 export default ProtectedRoute;
