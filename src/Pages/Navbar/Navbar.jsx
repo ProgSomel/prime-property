@@ -55,11 +55,11 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="max-w-6xl mx-auto mt-5 shadow-lg ">
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
+    <div className=" mt-5  max-w-6xl mx-auto ">
+      <div className="navbar bg-base-100 ">
+        <div className="navbar-start ">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost md:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -77,14 +77,14 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[8] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[8] p-2 shadow bg-base-100 rounded-box w-52 "
             >
               {navLinks}
               {user ? (
-                <div className="navbar-end ">
+                <div className="navbar-end w-full mt-5  flex  justify-center ">
                   {/*! Profile  */}
-                  <div>
-                    <div className="dropdown dropdown-end">
+                  <div className="">
+                    <div className="dropdown dropdown-end  ">
                       <div className="tooltip" data-tip={user?.displayName}>
                         <img
                           className="w-10 rounded-full"

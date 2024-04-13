@@ -18,7 +18,7 @@ const Root = () => {
 
 
     return (
-        <div data-aos="fade-up">
+        <div >
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
