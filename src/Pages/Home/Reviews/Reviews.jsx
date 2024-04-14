@@ -39,7 +39,7 @@ export default function Reviews() {
       >
         {reviews.map((review, idx) => (
           <SwiperSlide className="" key={idx}>
-            <div>
+            <div className="">
               <div className="bg-white h-full  text-neutral-content flex justify-center ">
                 <div className="card-body  text-gray-400  mt-5   text-center">
                   <p className="flex justify-center items-center text-red-400">

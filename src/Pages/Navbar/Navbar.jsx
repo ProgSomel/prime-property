@@ -55,7 +55,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className=" mt-5  max-w-6xl mx-auto ">
+    <div className=" mt-4  max-w-6xl mx-auto ">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -85,7 +85,7 @@ const Navbar = () => {
                   {/*! Profile  */}
                   <div className="">
                     <div className="dropdown dropdown-end  ">
-                      <div className="tooltip" data-tip={user?.displayName}>
+                      <div className="tooltip " data-tip={user?.displayName}>
                         <img
                           className="w-10 rounded-full"
                           alt="profile"

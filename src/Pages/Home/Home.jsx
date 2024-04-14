@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import AOS from "aos"; 
 import FeaturedPropertyTypes from "./FeaturedPropertyTypes/FeaturedPropertyTypes";
 import Reviews from "./Reviews/Reviews";
+import SearchAndFind from "../../components/SearchAndFind/SearchAndFind";
 
 const Home = () => {
   const estates = useLoaderData();
@@ -31,6 +32,9 @@ const Home = () => {
         ))}
       </div>
       </div>
+
+      <SearchAndFind></SearchAndFind>
+
 
       <Reviews></Reviews>
     </div>
