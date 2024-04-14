@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import swal from 'sweetalert';
 const Registration = () => {
-    const {createUser, updatingProfile} = useContext(AuthContext);
+    const {createUser, updatingProfile, logOut} = useContext(AuthContext);
+    const navigate = useNavigate(); 
+
 
     const handleRegistration = (e) => {
         e.preventDefault();
@@ -29,9 +31,11 @@ const Registration = () => {
 
         //! User creation 
         createUser(email, password)
-        .then((result)=> {
+        .then(()=> {
           updatingProfile(name, photoURL)
-          .then(()=> {})
+          .then(()=> {
+            logOut()
+          })
           .catch((err) => {
             swal({
               title: "Error!",
@@ -42,11 +46,12 @@ const Registration = () => {
           })
             swal({
                 title: "Good job!",
-                text: "You are successfully logged in!",
+                text: "You are successfully Registered!",
                 icon: "success",
                 button: "Okay!",
               });
-              console.log(result.user);
+              navigate('/login')
+              
         })
         .catch((err)=> {
           swal({
@@ -59,7 +64,7 @@ const Registration = () => {
     }
   return (
     <div className="px-2 md:px-4 lg:px-8 my-12">
-      <div className="max-w-md mx-auto mt-8 p-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-lg shadow-md">
+      <div className="max-w-md mx-auto mt-8 border-2 border-orange-200 p-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-lg shadow-md">
         <h2 className="text-3xl font-semibold text-white mb-4">Register</h2>
         <form onSubmit={handleRegistration}>
           <div className="mb-4">

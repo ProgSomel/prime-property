@@ -7,7 +7,8 @@ import phoneSearch from "../../assets/images/Search/searchPhone.jpg";
 const SearchAndFind = () => {
   return (
     <div className="max-w-6xl mx-auto px-2 md:px-4 lg:px-8 my-8 ">
-      <div className="bg-orange-100 w-5 p-8  flex justify-center rounded-tr-full rounded-bl-full">
+     <div data-aos="fade-right">
+     <div className="bg-orange-100 w-5 p-8  flex justify-center rounded-tr-full rounded-bl-full">
         <h1 className="font-bold text-2xl text-orange-500 ">01</h1>
       </div>
 
@@ -68,8 +69,10 @@ const SearchAndFind = () => {
           <img className="" src={openHouse} alt="" />
         </div>
       </div>
+     </div>
 
       {/* 02  */}
+     <div data-aos="fade-left">
      <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-12 mt-20">
      <div className="">
         <img src={phoneSearch} alt="" />
@@ -85,10 +88,10 @@ const SearchAndFind = () => {
         <div>
             <div className="space-y-4">
                 <h1 className="text-3xl font-bold flex justify-end">Meet Agents & Fixed Your Deal</h1>
-                <p className="text-gray-400 flex justify-end">Connect with our team of experienced real estate agents and finalize your deal with confidence! Our dedicated agents are here to guide you through every step of the home buying or selling process, offering personalized assistance tailored to your unique needs. Whether you're a first-time buyer or a seasoned investor, our knowledgeable agents possess the expertise and local market insights to help you make informed decisions. </p>
+                <p className="text-gray-400 flex justify-end">Connect with our team of experienced real estate agents and finalize your deal with confidence! Our dedicated agents are here to guide you through every step of the home buying or selling process, offering personalized assistance tailored to your unique needs. Whether you're a first-time buyer or a seasoned investor, our knowledgeable agents possess the expertise and local market insights to help you make informed decisions.</p>
 
                 <div className="flex justify-end">
-                <button className="btn bg-red-900 text-white font-bold">Find Property</button>
+                <button className="btn bg-red-900 hover:bg-orange-300 text-white font-bold">Find Property</button>
                 </div>
             </div>
         </div>
@@ -96,6 +99,7 @@ const SearchAndFind = () => {
         
       </div>
      
+     </div>
      </div>
 
 

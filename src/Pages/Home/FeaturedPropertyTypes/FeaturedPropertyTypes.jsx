@@ -6,7 +6,7 @@ import 'animate.css';
 
 const FeaturedPropertyTypes = () => {
   return (
-    <div className="pt-12">
+    <div className="pt-1">
     <h1 className=" text-4xl font-bold text-center ">Featured Property Types</h1>
     <p className="font-light text-center pt-4">Find All Types of Property.</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-6xl mx-auto mt-16 mb-32 px-2 md:px-4 lg:px-8">
