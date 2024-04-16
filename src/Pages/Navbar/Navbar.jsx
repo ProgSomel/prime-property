@@ -42,6 +42,21 @@ const Navbar = () => {
           Update Profile
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contactUs"
+          style={({ isActive, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              backgroundColor: isActive ? "orange" : "",
+              color: isActive ? "white" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </div>
   );
 

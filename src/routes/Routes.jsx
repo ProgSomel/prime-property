@@ -7,6 +7,7 @@ import EstateDetails from "../Pages/EstateDetails/EstateDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import ErrorPage from './../Pages/ErrorPage/ErrorPage';
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,12 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/contactUs",
+        element: <ProtectedRoute>
+          <ContactUs></ContactUs>
+        </ProtectedRoute>
       },
       {
         path: "/estates/:id",
