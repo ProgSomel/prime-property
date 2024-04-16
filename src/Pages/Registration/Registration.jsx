@@ -1,10 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import swal from 'sweetalert';
+
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
 const Registration = () => {
     const {createUser, updatingProfile, logOut} = useContext(AuthContext);
+
+    const [showPassword, setShowPassword] = useState(false);
+
+
     const navigate = useNavigate(); 
 
 
@@ -39,7 +47,7 @@ const Registration = () => {
           .catch((err) => {
             swal({
               title: "Error!",
-              text: `$ {err.message}`,
+              text: `${err.message}`,
               icon: "error",
               button: "Okay!",
             });
@@ -62,6 +70,9 @@ const Registration = () => {
           });
         })
     }
+
+   
+
   return (
     <div className="px-2 md:px-4 lg:px-8 my-12">
       <div className="max-w-md mx-auto mt-8 border-2 border-orange-200 p-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-lg shadow-md">
@@ -88,12 +99,17 @@ const Registration = () => {
               placeholder="Photo URL"
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <input
-              type="password" name="password"
+              type={showPassword ? "text": "password"} name="password"
               className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
               placeholder="Password"
             />
+            <span className="absolute top-4 right-4" onClick={()=>setShowPassword(!showPassword)}>
+              {
+                showPassword ? <FaEye className="cursor-pointer"></FaEye>:<FaEyeSlash className="cursor-pointer"></FaEyeSlash>
+              }
+            </span>
           </div>
           <button className="w-full bg-white text-pink-600 font-semibold px-4 py-2 rounded-lg hover:bg-opacity-75 transition duration-300">
             Register

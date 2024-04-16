@@ -1,11 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import swal from 'sweetalert';
 import toast, { Toaster } from 'react-hot-toast';
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 /* eslint-disable react/no-unescaped-entities */
 const Login = () => {
     const {signIn, googleLogin, githubLogin} = useContext(AuthContext);
+
+    const [showPassword, setShowPassword] = useState(false);
+
     const location = useLocation();
     const navigate = useNavigate();  
 
@@ -76,13 +81,18 @@ const Login = () => {
           placeholder="Email"
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
-          type="password"
+          type={showPassword ? "type": "password"}
           id="password" name="password"
           className="w-full px-4 py-2 bg-white bg-opacity-25 rounded-lg placeholder-white focus:outline-none focus:bg-opacity-50 focus:ring-2 focus:ring-white"
           placeholder="Password"
         />
+        <span className="absolute top-4 right-4" onClick={()=>setShowPassword(!showPassword)}>
+              {
+                showPassword ? <FaEye className="cursor-pointer"></FaEye>:<FaEyeSlash className="cursor-pointer"></FaEyeSlash>
+              }
+            </span>
       </div>
       <button  type="submit" className="w-full bg-white text-pink-600 font-semibold px-4 py-2 rounded-lg hover:bg-opacity-75 transition duration-300 mb-4">Login</button>
       <div className="flex justify-between">
