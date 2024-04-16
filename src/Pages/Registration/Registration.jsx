@@ -39,7 +39,7 @@ const Registration = () => {
           .catch((err) => {
             swal({
               title: "Error!",
-              text: `${err.message}`,
+              text: `$ {err.message}`,
               icon: "error",
               button: "Okay!",
             });

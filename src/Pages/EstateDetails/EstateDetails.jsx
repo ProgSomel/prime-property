@@ -74,7 +74,7 @@ const EstateDetails = () => {
           <img
             src={image}
             alt="Shoes"
-            className="rounded-xl w-full h-[300px]"
+            className="rounded-xl w-full h-[300px] bg-cover"
           />
         </figure>
         <div className="card-body items-center text-center space-y-2">
