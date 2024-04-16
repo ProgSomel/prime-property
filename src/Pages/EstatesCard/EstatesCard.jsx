@@ -40,7 +40,7 @@ const EstatesCard = ({ estates }) => {
               <p className="bg-blue-200 px-4 py-2 rounded-lg font-bold">
                 {rating}
               </p>
-              <Link className="w-full " to={`/estates/${id}`}>
+              <Link className="w-full " to={`/estates/${id}`}  state={estate_title}>
                 <button className="btn bg-gray-900 w-full   text-white font-bold">
                   View Property
                 </button>
