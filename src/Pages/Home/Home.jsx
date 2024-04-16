@@ -32,7 +32,7 @@ const Home = () => {
           data-aos="fade-right"
           className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-8 my-14 px-2 md:px-4 lg:px-8 min-h-screen"
         >
-          {estates.map((estate) => (
+          {estates?.map((estate) => (
             <EstatesCard key={estate.id} estates={estate}></EstatesCard>
           ))}
         </div>

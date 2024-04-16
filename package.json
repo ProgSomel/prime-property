@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
-    "firebase": "^10.10.0",
+    "firebase": "^10.11.0",
     "google-map-react": "^2.2.1",
     "leaflet": "^1.9.4",
     "localforage": "^1.10.0",

@@ -31,9 +31,9 @@ const Footer = () => {
       </nav>
       <nav>
         <h6 className="text-white font-bold text-xl">Services</h6>
-        <a className="link link-hover text-gray-200">Branding</a>
-        <a className="link link-hover text-gray-200">Design</a>
-        <a className="link link-hover text-gray-200">Marketing</a>
+        <a className="link link-hover text-gray-200">Rent Home</a>
+        <a className="link link-hover text-gray-200">Sale Home</a>
+        <a className="link link-hover text-gray-200">Design Home</a>
         <a className="link link-hover text-gray-200">Advertisement</a>
       </nav>
       <nav>

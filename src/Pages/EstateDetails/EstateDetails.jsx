@@ -93,7 +93,7 @@ const EstateDetails = () => {
             </p>
           </div>
           <div className="flex gap-8 py-5">
-            {facilities.map((facility, idx) => (
+            {facilities?.map((facility, idx) => (
               <p
                 className="bg-[#A4CE95] p-1 rounded-lg font-bold text-white"
                 key={idx}
@@ -141,7 +141,7 @@ const EstateDetails = () => {
             iconCreateFunction={createClusterCustomIcon}
           >
             {/* Mapping through the markers */}
-            {markers.map((marker, idx) => (
+            {markers?.map((marker, idx) => (
               <Marker key={idx} position={marker.geocode} icon={customIcon}>
                 <Popup>{marker.popUp}</Popup>
               </Marker>

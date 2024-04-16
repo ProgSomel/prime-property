@@ -1,6 +1,6 @@
 
 # Website_Name: PrimeProperty
-# Live_Link: https://flagrant-seashore.surge.sh/
+# Live_Link: https://prime-property-2a07e.web.app/
 
 # 1. Add at least 5 Project features 🔥
 
@@ -23,7 +23,7 @@
 ## Showing User Image to the Navbar:
 -After the successful login, user can see their image in the navbar and if the hover to the image , the can see their name also
 
-# 2. Add at least 5 Project features 🔥
+# 2. NPM Packages Used 🔥
 
 -AOS Package
 -Animate.css

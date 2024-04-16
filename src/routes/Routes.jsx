@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("../../public/estates.json"),
+        loader: () => fetch("estates.json"),
       },
       
 
@@ -43,7 +43,7 @@ const routes = createBrowserRouter([
             <EstateDetails></EstateDetails>
           </ProtectedRoute>
         ),
-        loader: () => fetch("../../public/estates.json"),
+        loader: () => fetch("estates.json"),
       },
       {
         path: "/updateProfile",

@@ -16,7 +16,7 @@ import { Pagination } from "swiper/modules";
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("../../../../public/reviews.json")
+    fetch("reviews.json")
       .then((response) => response.json())
       .then((data) => setReviews(data));
   }, []);

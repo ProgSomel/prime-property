@@ -30,7 +30,7 @@ const EstatesCard = ({ estates }) => {
             </div>
             <p className="py-4 font-bold text-xl animate__animated animate__bounce ">{estate_title}</p>
             <div className="flex gap-4 items-center">
-              {facilities.map((facility, idx) => (
+              {facilities?.map((facility, idx) => (
                 <p className="text-orange-900 font-semibold" key={idx}>
                   {facility}
                 </p>
