@@ -27,7 +27,8 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
+      {
+        user && <li>
         <NavLink
           to="/updateProfile"
           style={({ isActive, isTransitioning }) => {
@@ -42,6 +43,7 @@ const Navbar = () => {
           Update Profile
         </NavLink>
       </li>
+      }
       <li>
         <NavLink
           to="/contactUs"

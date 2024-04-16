@@ -68,6 +68,7 @@ const AuthProvider = ({children}) => {
         updatingProfile,
         googleLogin,
         githubLogin,
+        setUser,
         loading, 
     }
 

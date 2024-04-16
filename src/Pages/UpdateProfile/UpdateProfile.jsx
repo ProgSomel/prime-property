@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 
 const UpdateProfile = () => {
-  const { user, updatingProfile } = useContext(AuthContext);
+  const { user, updatingProfile, setUser } = useContext(AuthContext);
   const nameRef = useRef(null);
   const photoURLRef = useRef(null);
 
@@ -21,7 +21,11 @@ const UpdateProfile = () => {
           text: "You are successfully Updated information!",
           icon: "success",
         });
+        setUser({...user, displayName:name, photoURL:photoURL});
+        console.log(user);
+  
         <Navigate to="/updateProfile"></Navigate>;
+        
       })
       .catch((error) => {
         toast.error(error.message);

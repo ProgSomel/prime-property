@@ -20,6 +20,20 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
 
+        if(!/[A-Z]/.test(password)) {
+          toast.error("Password Must have at least one Uppercase letter");
+          return;
+      }
+      else if(!/[a-z]/.test(password)) {
+          toast.error("Password Must have at least one lowercase letter");
+          return;
+      }
+      else if(password.length < 6) {
+          toast.error("Password must be at least 6 characters long");
+          return;
+      }
+
+
         //! sign in 
         signIn(email, password)
         .then(() => {
