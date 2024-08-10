@@ -2,7 +2,7 @@
 # Website_Name: PrimeProperty
 # Live_Link: https://prime-property-2a07e.web.app/
 
-# 1. Add at least 5 Project features 🔥
+# 1. Project features 🔥
 
 ## Clicking on the View Property on the Estate card it will show Estate Details:
 
